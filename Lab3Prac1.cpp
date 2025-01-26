@@ -175,22 +175,23 @@ int main(){
             cout<<"Enter the value you want to add : ";
             cin>>value;
             bt.insertElement(value);
-            cout<<endl;
+            cout<<endl<<endl;
         } else if(choice == 2){
             int value;
             cout<<"Enter the value you want to delete : ";
             cin>>value;
             bt.deleteElement(value);
+            cout<<endl<<endl;
         } else if(choice == 3){
             bt.inorderTraversal();
-            cout<<endl;
+            cout<<endl<<endl;
         } else if(choice == 4){
             cout<<"Exitting...\n";
-            cout<<endl;
+            cout<<endl<<endl;
             break;
         } else{
             cout<<"Enter valid choice.\n";
-            cout<<endl;
+            cout<<endl<<endl;
         }
     }
 
