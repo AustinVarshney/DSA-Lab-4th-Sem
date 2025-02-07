@@ -48,8 +48,6 @@ public:
 void binarySearchTree::addEle(Node*& node, int value){
     if(node == NULL){
         Node* newlink = new Node(value);
-        newlink->prev = NULL;
-        newlink->next = NULL;
         node = newlink;
         return;
     }
