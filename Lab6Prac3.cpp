@@ -39,8 +39,8 @@ public:
         cout << "Graph representation (Adjacency List):\n";
         for (int i = 0; i < V; i++) {
             cout << "Vertex " << i << " -> ";
-            for (int v : adjList[i])
-                cout << v << " ";
+            for(int j=0; j<adjList[i].size(); j++)
+                cout << adjList[i][j] << " ";
             cout << endl;
         }
     }
