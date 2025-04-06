@@ -27,7 +27,7 @@ public:
         out<<endl;
     }
 
-    void transpose(ostream& out){
+    void transpose(ofstream& out){
         for(int i=0; i<V; i++){
             for(int j=i; j<V; j++){
                 swap(matrix[i][j], matrix[j][i]);

@@ -8,7 +8,7 @@ int main() {
     ofstream outputFile("output.txt"); // Open file for writing
 
     // Check if the input file is open
-    if (!inputFile) {
+    if (!inputFile || !outputFile) {
         cerr << "Error: Unable to open input file!" << endl;
         return 1; // Exit with error
     }
