@@ -56,9 +56,14 @@ int main()
     int stIdx = 0;
 
     for(int j=0; j<n; j++){
-        Nbr_TV[j] = 0;
-        Distance_TV[j] = graph[0][j];
+        if(graph[0][j] != INF && j != 0){
+            Nbr_TV[j] = 0;
+            Distance_TV[j] = graph[0][j];
+        } 
     }
+
+    Distance_TV[stIdx] = 0;
+    Nbr_TV[stIdx] = 0;
 
     for(int i=1; i<n; i++){
         int idx = -1;

@@ -77,10 +77,11 @@ public:
             q.pop();
             cout << vertex << " ";
 
-            for (int neighbor : adjList[vertex]) {
-                if (!visited[neighbor]) {
-                    visited[neighbor] = true;
-                    q.push(neighbor);
+            // for (int neighbor : adjList[vertex]) {
+            for (int i=0; i<V; i++) {
+                if (!visited[i]) {
+                    visited[i] = true;
+                    q.push(i);
                 }
             }
         }
