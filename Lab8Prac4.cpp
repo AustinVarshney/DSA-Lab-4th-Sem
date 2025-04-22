@@ -4,8 +4,7 @@ using namespace std;
 const int MAX = 100;
 const int INF = 20000;
 
-int main()
-{
+int main(){                     //Prim's Algorithm
     int n = 7;
 
     int graph[MAX][MAX];
@@ -56,9 +55,9 @@ int main()
     int stIdx = 0;
 
     for(int j=0; j<n; j++){
-        if(graph[0][j] != INF && j != 0){
+        if(graph[stIdx][j] != INF && j != 0){
             Nbr_TV[j] = 0;
-            Distance_TV[j] = graph[0][j];
+            Distance_TV[j] = graph[stIdx][j];
         } 
     }
 

@@ -2,7 +2,7 @@
 #include <map>
 using namespace std;
 
-int main() {
+int main() {                //Dijkstra's Algorithm
     const int MAX = 20000;
     map<int, map<int, int>> graph;
 

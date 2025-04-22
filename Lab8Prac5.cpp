@@ -4,7 +4,7 @@ using namespace std;
 const int MAX = 100;
 const int INF = 20000;
 
-int main(){
+int main(){                     //Bellman Ford Algorithm
     // int n=3;
     int n=5;
 

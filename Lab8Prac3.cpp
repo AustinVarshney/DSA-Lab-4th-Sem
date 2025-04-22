@@ -4,7 +4,7 @@ using namespace std;
 const int MAX = 100;
 const int INF = 20000;
 
-int main() {
+int main() {                    //Dijkstra's Algorithm
     int n = 7;
 
     int graph[MAX][MAX];

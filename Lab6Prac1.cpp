@@ -68,6 +68,72 @@ public:
         cout << endl;
     }
 
+    // Cycle Detection in an Undirected Graph using DFS
+    bool isCyclicUtil(int vertex, bool visited[], int parent) {
+        visited[vertex] = true;
+
+        for (int i = 0; i < V; i++) {
+            if (adjMatrix[vertex][i] == 1) {
+                if (!visited[i]) {
+                    if (isCyclicUtil(i, visited, vertex))
+                        return true;
+                } else if (i != parent) {
+                    // If visited and not parent, it's a cycle
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    bool isCyclic() {
+        bool *visited = new bool[V]{false};
+
+        for (int i = 0; i < V; i++) {
+            if (!visited[i]) {
+                if (isCyclicUtil(i, visited, -1)) {
+                    delete[] visited;
+                    return true;
+                }
+            }
+        }
+
+        delete[] visited;
+        return false;
+    }
+    bool isBipartiteDFS(int node, int color[], int currentColor) {
+        color[node] = currentColor;
+    
+        for (int i = 0; i < V; i++) {
+            if (adjMatrix[node][i] == 1) {
+                if (color[i] == -1) {
+                    if (!isBipartiteDFS(i, color, 1 - currentColor))
+                        return false;
+                }
+                else if (color[i] == currentColor) {
+                    return false; // Adjacent node has same color — not bipartite
+                }
+            }
+        }
+    
+        return true;
+    }
+    
+    bool isBipartite() {
+        int color[V];
+        for (int i = 0; i < V; i++)
+            color[i] = -1;
+    
+        for (int i = 0; i < V; i++) {
+            if (color[i] == -1) {
+                if (!isBipartiteDFS(i, color, 0))
+                    return false;
+            }
+        }
+    
+        return true;
+    }    
+
     // Breadth-First Search (BFS) Traversal
     void BFS(int start) {
         vector<bool> visited(V, false);
